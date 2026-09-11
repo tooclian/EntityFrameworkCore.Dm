@@ -53,7 +53,7 @@ namespace Microsoft.EntityFrameworkCore.Dm.Storage.Internal
 
         private readonly DmStringTypeMapping _json = new DmStringTypeMapping("JSON", DbType.String);
 
-        private readonly GuidTypeMapping _guid = new GuidTypeMapping("CHAR(36)", (DbType?)DbType.Guid);
+        private readonly GuidTypeMapping _guid = new DmGuidTypeMapping();
 
         private readonly DmByteArrayTypeMapping _blobBinary = new DmByteArrayTypeMapping("blob", System.Data.DbType.Binary);
 

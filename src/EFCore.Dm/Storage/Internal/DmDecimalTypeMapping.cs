@@ -14,7 +14,7 @@ namespace Microsoft.EntityFrameworkCore.Dm.Storage.Internal
 	public class DmDecimalTypeMapping : DecimalTypeMapping
 	{
 		public DmDecimalTypeMapping([NotNull] string storeType, DbType? dbType = null, int? precision = null, int? scale = null)
-			: this(new RelationalTypeMappingParameters(new CoreTypeMappingParameters(typeof(decimal), (ValueConverter)null, (ValueComparer)null, (ValueComparer)null, (ValueComparer)null, (Func<IProperty, ITypeBase, ValueGenerator>)null, (CoreTypeMapping)null, (JsonValueReaderWriter)null), storeType, (StoreTypePostfix)3, dbType, false, (int?)null, false, precision, scale))
+			: this(new RelationalTypeMappingParameters(new CoreTypeMappingParameters(typeof(decimal), (ValueConverter)null, (ValueComparer)null, (ValueComparer)null, (ValueComparer)null, (Func<IProperty, ITypeBase, ValueGenerator>)null, (CoreTypeMapping)null, JsonDecimalReaderWriter.Instance), storeType, (StoreTypePostfix)3, dbType, false, (int?)null, false, precision, scale))
 		{
 		}
 

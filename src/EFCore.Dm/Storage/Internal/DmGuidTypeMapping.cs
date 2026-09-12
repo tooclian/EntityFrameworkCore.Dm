@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Storage.Json;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Microsoft.EntityFrameworkCore.Dm.Storage.Internal
@@ -19,7 +20,8 @@ namespace Microsoft.EntityFrameworkCore.Dm.Storage.Internal
             : base(new RelationalTypeMappingParameters(
                 new CoreTypeMappingParameters(
                     typeof(Guid),
-                    new GuidToStringConverter()),
+                    new GuidToStringConverter(),
+                    jsonValueReaderWriter: JsonGuidReaderWriter.Instance),
                 "CHAR(36)",
                 StoreTypePostfix.None,
                 System.Data.DbType.String))

@@ -16,7 +16,7 @@ namespace Microsoft.EntityFrameworkCore.Dm.Storage.Internal
 		private readonly StoreTypePostfix? _storeTypePostfix;
 
 		public DmByteArrayTypeMapping([NotNull] string storeType, DbType? dbType = System.Data.DbType.Binary, int? size = null, bool fixedLength = false, ValueComparer comparer = null, StoreTypePostfix? storeTypePostfix = null)
-			: this(new RelationalTypeMappingParameters(new CoreTypeMappingParameters(typeof(byte[]), null, comparer, null, null, null, null, null), storeType, GetStoreTypePostfix(storeTypePostfix, size), dbType, false, size, fixedLength, (int?)null, (int?)null))
+			: this(new RelationalTypeMappingParameters(new CoreTypeMappingParameters(typeof(byte[]), null, comparer, null, null, null, null, Microsoft.EntityFrameworkCore.Storage.Json.JsonByteArrayReaderWriter.Instance), storeType, GetStoreTypePostfix(storeTypePostfix, size), dbType, false, size, fixedLength, (int?)null, (int?)null))
 		{
 			_storeTypePostfix = storeTypePostfix;
 		}
